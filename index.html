@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #171717;
+}
+
+/* NAVBAR */
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    background: #ffffff;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    color: #171717;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 30px 70px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 500px;
+    color: #777;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* KARTICE */
+
+.tasks {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px 100px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.task-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 30px;
+
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.task-number {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 40px;
+}
+
+.task-card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.task-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.task-button {
+    margin-top: auto;
+
+    display: inline-block;
+    width: fit-content;
+
+    padding: 10px 16px;
+
+    background: #171717;
+    color: white;
+    text-decoration: none;
+
+    border-radius: 6px;
+    font-size: 13px;
+
+    transition: background 0.2s ease;
+}
+
+.task-button:hover {
+    background: #444;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #e5e5e5;
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+    .tasks {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        padding: 18px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 70px 20px 50px;
+    }
+
+    .tasks {
+        padding: 0 20px 70px;
+    }
+}
+
+
+</style>
+<body>
+    <!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Početna stranica</a>
+
+            <ul class="nav-links">
+                <li><a href="#pocetna">Početna</a></li>
+                <li><a href="#zadaci">Zadaci</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="pocetna">
+            <p class="subtitle">Školski projekt</p>
+            <h1>Moji zadaci</h1>
+            <p class="description">
+                Pregled svih mojih zadataka i projekata.
+            </p>
+        </section>
+
+        <section class="tasks" id="zadaci">
+
+            <div class="task-card">
+                <span class="task-number">01</span>
+                <h2>Zadaća 1</h2>
+                <p>
+                    
+                </p>
+                <a href="zadaci/zadatak1.html" class="task-button">
+                    Otvori zadatak →
+                </a>
+            </div>
+
+            <div class="task-card">
+                <span class="task-number">02</span>
+                <h2>Zadaća 2</h2>
+                <p>
+                    
+                </p>
+                <a href="zadaci/zadatak2.html" class="task-button">
+                    Otvori zadatak →
+                </a>
+            </div>
+
+            <div class="task-card">
+                <span class="task-number">03</span>
+                <h2>Zadaća 3</h2>
+                <p>
+                    
+                </p>
+                <a href="zadaci/zadatak3.html" class="task-button">
+                    Otvori zadatak →
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="kontakt">
+        <h3>Hrvoje Dangubić, 4.e</h3>
+        <p>©2026</p>
+        
+    </footer>
+
+</body>
+</html>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
