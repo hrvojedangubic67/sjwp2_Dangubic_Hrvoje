@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jedrilica - SVG</title>
+
+  <style>
+     .gingerbread {
+                    fill: #cf8436;
+                  }
+
+                  .eye,
+                  .button {
+                    fill: #000;
+                  }
+
+                  .mouth {
+                    fill: none;
+                    stroke: white;
+                    stroke-width: 4;
+                    stroke-linecap: round;
+                  }
+                 
+      .gingerbread {
+        fill: #cf8436;
+      }
+      .button {
+     fill: #000;
+     }
+
+    .mouth {
+     fill: none;
+     stroke: white;
+     stroke-width: 4;
+     stroke-linecap: round;
+    }
+     .tree-top {
+        fill: #397b63;
+    }
+
+    .tree-middle {
+        fill: #006451;
+    }
+
+    .tree-bottom {
+        fill: #214b3f;
+    }
+
+    .trunk {
+        fill: #ad2d31;
+    }
+    .pacman {
+        fill: #fff500;
+        stroke: #000000;
+        stroke-width: 9;
+        stroke-linejoin: miter;
+    }
+
+    .eye {
+        fill: #ffffff;
+    }
+    .eye1{
+      fill: black;
+    }
+      
+                  
+  </style>
+</head>
+
+<body>
+
+  <svg width="600" height="600" style="border: 5px solid black" >
+       <rect width="100%" height="100%" fill="lightblue" />
+       <circle cx="470" cy="90" r="60" fill="yellow" />
+       <rect x="0" y="420" width="100%" height="30%" fill="blue"/>
+       <rect x="70" y="400" width="40%" height="10%" fill="maroon"/>
+       <rect x="178" y="160" width="2%" height="40%" fill="black" stroke="maroon" stroke-width="2"/>
+       <polygon points="170,250 90,390 170,390" fill="white"/>
+       <polygon points="200,250 280,390 200,390" fill="white"/>
+       <polygon points="170,210 120,185 170,160" fill="green"/>
+    </svg>
+     <svg width="475" height="425">
+        <rect x="18" y="13" width="400" height="399" rx="5" fill="#f2dac1"/>
+        <path d="M18 302 Q105 275 185 278 Q285 265 418 302 L418 412 L18 412 Z" fill="#f5f3e8"/>
+        <rect x="94" y="305" width="8" height="48" fill="#7d8778" />
+        <polygon points="98,112 58,312 138,312" fill="#337d65" />
+        <rect x="168" y="307" width="5" height="27" fill="#7d8778" />
+        <polygon points="170,189 146,309 194,309" fill="#337d65" />
+        <rect x="296" y="291" width="5" height="22" fill="#7d8778" />
+        <polygon points="298,193 278,293 318,293" fill="#337d65" />
+        <rect x="365" y="301" width="6" height="32" fill="#7d8778" />
+        <polygon points="368,153 338,303 398,303" fill="#337d65" />
+    </svg>
+    <svg width="475" height="425">
+        <circle cx="178.5" cy="243" r="117" fill="#CE485C"/>
+        <rect x="149" y="99" width="59" height="34" fill="#F7945B"/>
+        <circle cx="178.5" cy="82" r="20.5" fill="none" stroke="#F7945B" stroke-width="4"/>
+    </svg>
+    <svg width="475" height="425">
+        <circle class="gingerbread" cx="130" cy="82" r="55" />
+        <path class="gingerbread" d="M 94 125 C 82 139, 70 148, 57 148 L 54 148 C 37 148, 24 160, 24 176 C 24 193, 37 207, 54 207 L 78 207 L 53 285 C 48 300, 56 317, 71 323 C 87 329, 103 321, 109 306 L 129 253 L 150 306 C 156 321, 172 329, 188 323 C 203 317, 211 300, 206 285 L 181 207 L 205 207 C 222 207, 235 193, 235 176 C 235 160, 222 148, 205 148 L 202 148 C 189 148, 178 139, 166 125 Z"/>
+        <circle class="eye" cx="107" cy="73" r="5.5" />
+        <circle class="eye" cx="151" cy="73" r="5.5" />
+        <rect class="mouth" x="111" y="101" width="37" height="10" rx="4"/>
+        <circle class="button" cx="130" cy="164" r="9"/>
+        <circle class="button" cx="130" cy="200" r="9"/>
+    </svg>
+
+    <svg width="475" height="425" viewBox="0 0 475 425">
+    <rect class="trunk" x="215" y="378" width="58" height="44" />
+    <path class="tree-bottom"
+          d="M 244 285 L 127 378 L 361 378 Z" />
+    <path class="tree-middle"
+          d="M 244 191 L 157 291 L 332 291 Z" />
+    <path class="tree-top"
+          d="M 244 87 L 186 203 L 303 203 Z" />
+  </svg>
+  <svg width="475" height="425">
+    <path class="pacman" d="M 447 91 A 220 220 0 1 0 435 402 L 284 240 Z" />
+    <circle class="eye1" cx="291" cy="150" r="23" />
+  </svg>
+
+
+</body>
+</html>
