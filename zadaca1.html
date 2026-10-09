@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skriptni jezici</title>
+</head>
+<style>
+table{
+border-collapse: collapse;
+
+
+}
+td,th{
+    border: 1px solid black;
+}
+*{
+    background-color: #C2F8F6;
+}
+h1{
+    font-style: bold;
+    font-size: 2.3em;
+}
+p{
+    margin: 7px;
+    color: rgb(86 86 86 / 86);
+}
+img{
+    width: 480px;
+    height: 220px;
+}
+.navbar{
+     list-style-type: none;
+    display: flex;
+}
+.nav-ele{
+    margin-left: 200px;
+    text-align: center;
+}
+.button{
+     
+    
+    background-color: #C2F8F6;
+    
+}
+form{
+border-radius: 3px;
+width: 50%;
+
+}
+</style>
+<body>
+<ul class="navbar">
+        <li class="nav-ele"><a href="./sport.html">Sport</a></li>
+        <li class="nav-ele"><a href="./Vijesti.html">Vijesti</a></li>
+        <li class="nav-ele"><a href="./novac.html">Novac</a></li>
+    </ul>
+
+    <h1>Ponavljanje Canvas i Svg</h1>
+<p>Canvas je oznaka (tag) HTML5 standarda namijenjena crtanju. <br>
+Canvas je 2D crtaća platforma unutar web preglednika, a koristi JavaScript i HTML. <br>
+Upotrebom JavaScript-a se može pristupiti čitavom setu funkcija za crtanje linija, <br>
+pravokutnika, lukova, crta, teksta … <br> On nema vlastiti sadržaj, a od parametara ima samo dimenzije.</p>
+<hr>
+
+<ul>
+<li>Canvas API (API - Application Programming Interface - aplikacijsko programsko <br>
+sučelje) osigurava alate za crtanje grafike putem JavaScript-a i HTML canvas <br>
+elementa.</li>
+<li>
+    Canvas API je uglavnom namijenjen 2D crtanju, iako postoji mogućnost rada i sa 3D <br>
+grafikom preko WebGL API –ja
+</li>
+<li>Crtanje grafike s pomoću oznake canvas kombinira poznavanje HTML-a, CSS-a i <br>
+JavaScripta, pa ćemo njega učiti sljedećem poglavlju.</li></ul>
+<hr>
+<p><strong>SVG</strong>  (Scalable Vector Graphics) većinom je manje težine u usporedbi sa Bitmap rasterskom <br>
+slikom, koja posjeduje otprilike iste rezoluciju i grafički prikaz. <br>
+Uključivanje SVG-a u HTML dokument omogućava naknadno stiliziranje grafike putem CSS-a, <br>
+ali i manipulaciju JavaScript-om. Tako možemo promijeniti svojstva, kao što su: boja <br>
+pozadine, teksta, okvira, na isti način kao i za bilo koji HTML element. <br>
+Zbog toga je omogućeno i animirati sve SVG objekte preko JavaScript biblioteke kao što je <br>
+jQuery.</p>
+<hr>
+<h3>Usporedba SVG-a i Canvasa</h3>
+<table>
+<tr>
+    <th>Category</th>
+    <th>canvas</th>
+    <th>SVG</th>
+</tr>
+<tr>
+<td>Supporting <br> elements</td>
+<td>Bitmap, <br> based on pixels</td>
+<td>Vector illustration, <br> based on graphic <br> elements</td>
+
+</tr>
+<tr>
+    <td>Operation <br> object</td>
+    <td>Single HTML element</td>
+    <td>Various graphic ele- <br> ments</td>
+</tr>
+<tr>
+    <td>Driver</td>
+<td>JavaScript and other <br> script driven</td>
+<td>Script or CSS driven</td></tr>
+
+</table>
+<br>
+<br>
+<table>
+<tr>
+<th>Mjesec</th>
+<th>Ušteda</th>
+<th>Ušteda za blagdane!</th>
+</tr>
+<tr><td>Siječanj</td>
+<td>$100</td>
+<td rowspan="2">$50</td></tr>
+<tr><td>Veljača</td>
+<td>$80</td>
+</tr>
+</table>
+<br>
+<br>
+<img src="./slike/Snimka zaslona 2026-10-09 180034.png" alt="Slika-vector_raster">
+<br>
+<br>
+<hr>
+<h2>SVG</h2>
+<svg width="600" height="600" style="border: 5px solid black" >
+       <rect width="100%" height="100%" fill="lightblue" />
+       <circle cx="80" cy="200" r="40" fill="yellow" />
+       <rect x="0" y="420" width="100%" height="30%" fill="#2780F5"/>
+       <rect x="70" y="400" width="40%" height="10%" fill="#0048AD"/>
+       <rect x="178" y="160" width="2%" height="40%" fill="AB0000"/>
+       <polygon points="170,220 90,390 170,390" fill="white"/>
+       <polygon points="200,250 280,390 200,390" fill="lightcoral"/>
+       <polygon points="190,210 250,185 190,160" fill="red"/>
+       <circle />
+    </svg>
+<h2>canvas</h2>
+
+   
+
+    <canvas id="brod" width="600" height="600"></canvas>
+
+    <script>
+        const c = document.getElementById("brod");
+        const ctx = c.getContext("2d");
+
+        ctx.fillStyle = "lightblue";
+        ctx.fillRect(0, 0, 350, 170);
+
+        ctx.fillStyle = "cornflowerblue";
+        ctx.fillRect(0, 170, 350, 80);
+
+        ctx.fillStyle = "yellow";
+        ctx.beginPath();
+        ctx.arc(60, 40, 40, 0, 3.14 * 2);
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.moveTo(145, 100);
+        ctx.lineTo(75, 170);
+        ctx.lineTo(145, 170);
+        ctx.fill();
+
+        ctx.fillStyle = "lightcoral";
+        ctx.beginPath();
+        ctx.moveTo(155, 105);
+        ctx.lineTo(155, 170);
+        ctx.lineTo(210, 170);
+        ctx.fill();
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(145, 50, 8, 130);
+
+        ctx.fillStyle = "red";
+        ctx.beginPath();
+        ctx.moveTo(153, 50);
+        ctx.lineTo(180, 63);
+        ctx.lineTo(153, 76);
+        ctx.fill();
+
+        ctx.fillStyle = "navy";
+        ctx.beginPath();
+        ctx.moveTo(75, 180);
+        ctx.lineTo(210, 180);
+        ctx.quadraticCurveTo(200, 230, 140, 230);
+        ctx.quadraticCurveTo(85, 220, 75, 180);
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+
+        [115, 145, 175].forEach(x => {
+            ctx.beginPath();
+            ctx.arc(x, 200, 8, 0, Math.PI * 2);
+            ctx.fill();
+        });
+    </script>
+
+
+
+
+
+
+
+<br>
+<hr>
+<h2>Formular</h2>
+<form action="./uspjeh.html" method="get">
+        <label for="name">Unesi ime:</label><br>
+        <input required placeholder="Ime..." type="text" id="name"><br>
+        <label for="prezime">Unesi lozinku:</label><br>
+        <input required placeholder="Lozinka..." type="password" id="prezime"><br>
+        <label for="boja">Odaberite boju:</label><br>
+        <input type="color" id="boja"><br><br>
+        <button class="button" type="submit">Submit</button>
+        <button class="button" type="reset">Reset</button>
+<br><br>
+</form>
+
+
+</body>
+</html>
