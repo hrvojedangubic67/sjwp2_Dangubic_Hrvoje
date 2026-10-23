@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<style>
+.normalno{
+    background-color: aliceblue;
+}
+.istaknuto{
+    background-color: brown;
+}
+.pokazano{
+    display: flex;
+}
+.sakriveno{
+    display: none;
+}
+
+</style>
+<body>
+    zad 1.-4.
+    <h1>Moja stranica</h1>
+    <div id="div1"><p id="opis">p element</p></div><br>
+    
+     5. zad
+    <div id="d2"><button id="b1">Prikaži poruku</button></div><br>
+
+<br>
+6.zad
+<p class="d01">a</p>
+<p class="d01">a</p>
+<p class="d01">a</p>
+
+7. zad
+<p id="p12">Upozorenje</p>
+<button id="but677">Promijeni</button>
+<br><br>
+8.zad <br>
+
+<div class="normalno" id="norm1">
+    <p>Nova kartica</p>
+</div>
+
+<button onclick="toggle()" >Promijeni izgled</button>
+
+9. zad
+<p class="pokazano" id="p111">odlomak
+</p>
+<button onclick="toggle2()">Pokazi</button>
+
+
+<script>
+    let naslov=document.querySelector("h1");
+    naslov.innerHTML="DOM radi";
+    let paragraf=document.getElementById("opis");
+    paragraf.textContent="Ja sam Hrvoje";
+    let divi=document.getElementById("div1");
+    naslov.style.color="cyan";
+    naslov.style.fontSize="32px";
+    divi.style.backgroundColor="red";
+    divi.style.padding="10px";
+    divi.style.textAlign="center";
+    let div2=document.getElementById("d2");
+    
+    let but67=document.getElementById("b1");
+    but67.onclick=function(){
+        d2.textContent="Uspješno ste kliknuli gumb!";
+    }
+
+    let d01=document.querySelectorAll(".d01");
+    d01[0].style.color="lightblue";
+    d01[1].style.color="yellow";
+    d01[2].style.color="purple";
+
+
+    let but677=document.getElementById("but677");
+    but677.onclick=function(){
+        p12.textContent="Novo upozorenje";
+        p12.style.color="red";
+        p12.style.backgroundColor="yellow";
+        p12.style.fontWeight="bold";
+    }
+
+    function toggle(){
+        let kartica=document.getElementById("norm1");
+        kartica.classList.toggle("istaknuto");
+    }
+
+    function toggle2(){
+        let par=document.getElementById("p111");
+        par.classList.toggle2("sakriveno");
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
