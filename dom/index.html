@@ -1,104 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
-</head>
+  </head>
 
-<style>
-.normalno{
-    background-color: aliceblue;
-}
-.istaknuto{
-    background-color: brown;
-}
-.pokazano{
-    display: flex;
-}
-.sakriveno{
-    display: none;
-}
+  <style>
+    .normalno {
+      background-color: aliceblue;
+    }
+    .istaknuto {
+      background-color: brown;
+    }
+    .pokazano {
+      display: flex;
+    }
+    .sakriveno {
+      display: none;
+    }
+    img {
+      width: 300px;
+      height: 200px;
+    }
 
-</style>
-<body>
+    .busson {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .l11 {
+      font-size: larger;
+    }
+    .omoguceno {
+    }
+    .svijetla {
+      background-color: white;
+      color: #222;
+    }
+
+    .tamna {
+      background-color: #222;
+      color: white;
+    }
+  </style>
+  <body>
     zad 1.-4.
     <h1>Moja stranica</h1>
-    <div id="div1"><p id="opis">p element</p></div><br>
-    
-     5. zad
-    <div id="d2"><button id="b1">Prikaži poruku</button></div><br>
+    <div id="div1"><p id="opis">p element</p></div>
+    <br />
 
-<br>
-6.zad
-<p class="d01">a</p>
-<p class="d01">a</p>
-<p class="d01">a</p>
+    5. zad
+    <div id="d2"><button id="b1">Prikaži poruku</button></div>
+    <br />
 
-7. zad
-<p id="p12">Upozorenje</p>
-<button id="but677">Promijeni</button>
-<br><br>
-8.zad <br>
+    <br />
 
-<div class="normalno" id="norm1">
-    <p>Nova kartica</p>
-</div>
+    6.zad
+    <p class="d01">a</p>
+    <p class="d01">a</p>
+    <p class="d01">a</p>
 
-<button onclick="toggle()" >Promijeni izgled</button>
+    7. zad
+    <p id="p12">Upozorenje</p>
+    <button id="but677">Promijeni</button>
+    <br /><br />
 
-9. zad
-<p class="pokazano" id="p111">odlomak
-</p>
-<button onclick="toggle2()">Pokazi</button>
+    8.zad <br />
 
+    <div class="normalno" id="norm1">
+      <p>Nova kartica</p>
+    </div>
 
-<script>
-    let naslov=document.querySelector("h1");
-    naslov.innerHTML="DOM radi";
-    let paragraf=document.getElementById("opis");
-    paragraf.textContent="Ja sam Hrvoje";
-    let divi=document.getElementById("div1");
-    naslov.style.color="cyan";
-    naslov.style.fontSize="32px";
-    divi.style.backgroundColor="red";
-    divi.style.padding="10px";
-    divi.style.textAlign="center";
-    let div2=document.getElementById("d2");
-    
-    let but67=document.getElementById("b1");
-    but67.onclick=function(){
-        d2.textContent="Uspješno ste kliknuli gumb!";
-    }
+    <button onclick="toggle()">Promijeni izgled</button>
 
-    let d01=document.querySelectorAll(".d01");
-    d01[0].style.color="lightblue";
-    d01[1].style.color="yellow";
-    d01[2].style.color="purple";
+    9. zad
+    <p class="pokazano" id="p111">odlomak</p>
+    <button onclick="toggle2()">Pokazi</button>
+    <br /><br /><br />
 
+    10. zad <br />
+    <img
+      id="slika"
+      src="https://auto-aurum.hr/wp-content/uploads/2026/05/DSC01126.jpg"
+      alt="Prva slika - prazan primjer"
+    />
 
-    let but677=document.getElementById("but677");
-    but677.onclick=function(){
-        p12.textContent="Novo upozorenje";
-        p12.style.color="red";
-        p12.style.backgroundColor="yellow";
-        p12.style.fontWeight="bold";
-    }
+    <br /><br />
 
-    function toggle(){
-        let kartica=document.getElementById("norm1");
+    <button class="busson" id="gumb">Promijeni sliku</button>
+    <br /><br />
+
+    11.zad <br />
+    <a id="l1" class="l11" href="https://www.youtube.com/">Poveznica</a>
+    <br /><br />
+    <button class="busson" id="b10">Promijeni link</button><br />
+    <br />
+
+    12.zad <br />
+    <button id="push">Pritisni</button><br /><br />
+    <button onclick="omoguci()">Omogući</button><br /><br />
+    <button onclick="onemoguci()">Onemogući</button><br /><br />
+
+    13.zad <br />
+    <p id="p19">0</p>
+    <button onclick="povecaj()">Povecaj za 1</button>
+    <br />
+    14.zad <br />
+
+<body>
+
+  <div id="kartica" class="kartica svijetla">
+    <h2>Moja kartica</h2>
+    <p>Ovdje se mijenja tema kartice.</p>
+    <button onclick="promijeniTemu()">
+      Promijeni temu
+    <script>
+      let naslov = document.querySelector("h1");
+      naslov.innerHTML = "DOM radi";
+      let paragraf = document.getElementById("opis");
+      paragraf.textContent = "Ja sam Hrvoje";
+      let divi = document.getElementById("div1");
+      naslov.style.color = "cyan";
+      naslov.style.fontSize = "32px";
+      divi.style.backgroundColor = "red";
+      divi.style.padding = "10px";
+      divi.style.textAlign = "center";
+      let div2 = document.getElementById("d2");
+
+      let but67 = document.getElementById("b1");
+      but67.onclick = function () {
+        d2.textContent = "Uspješno ste kliknuli gumb!";
+      };
+
+      let d01 = document.querySelectorAll(".d01");
+      d01[0].style.color = "lightblue";
+      d01[1].style.color = "yellow";
+      d01[2].style.color = "purple";
+
+      let but677 = document.getElementById("but677");
+      but677.onclick = function () {
+        p12.textContent = "Novo upozorenje";
+        p12.style.color = "red";
+        p12.style.backgroundColor = "yellow";
+        p12.style.fontWeight = "bold";
+      };
+
+      function toggle() {
+        let kartica = document.getElementById("norm1");
         kartica.classList.toggle("istaknuto");
-    }
+      }
 
-    function toggle2(){
-        let par=document.getElementById("p111");
+      function toggle2() {
+        let par = document.getElementById("p111");
         par.classList.toggle2("sakriveno");
+      }
+
+      const slika = document.getElementById("slika");
+      const gumb = document.getElementById("gumb");
+
+      gumb.addEventListener("click", function () {
+        slika.src = "https://cdng.europosters.eu/pod_public/1300/121020.jpg";
+        slika.alt = "Druga slika - novi primjer";
+
+        gumb.textContent = "Slika je promijenjena!";
+      });
+      const link = document.getElementById("l1");
+      const b10 = document.getElementById("b10");
+      b10.addEventListener("click", function () {
+        link.href = "https://www.google.com/?hl=hr";
+      });
+      const b121 = document.getElementById("push");
+      function omoguci() {
+        document.getElementById("push").disabled = false;
+      }
+      function onemoguci() {
+        document.getElementById("push").disabled = true;
+      }
+      let c = 0;
+      let a = document.getElementById("p19");
+      function povecaj() {
+        if (c < 10) {
+          c += 1;
+          a.textContent = c;
+        } else {
+          a.style.color = "pink";
+        }
+      }
+      function promijeniTemu() {
+      const kartica = document.getElementById("kartica");
+
+      kartica.classList.toggle("svijetla");
+      kartica.classList.toggle("tamna");
     }
-
-
-
-
-
-</script>
-</body>
+    </script>
+  </body>
 </html>
